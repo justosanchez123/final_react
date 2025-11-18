@@ -9,7 +9,7 @@ export const Login = () => {
     const navigate = useNavigate();
 
     if (user) {
-        return <Navigate to="/admin/alta-productos" />;
+        return <Navigate to="/admin/productos" />;
     }
 
     const handleChange = (e) => {
@@ -22,7 +22,7 @@ export const Login = () => {
         const succes = login(userForm.name, userForm.password);
 
         if (succes){
-            navigate("/admin/alta-productos");            
+            navigate("/admin/productos");            
         }   else {
             alert("Credenciales incorrectas");
             setUserForm({name: "", password: ""});

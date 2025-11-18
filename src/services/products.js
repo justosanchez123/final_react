@@ -37,3 +37,37 @@ export const getProductById = async (id) => {
   }
   return await res.json();
 };
+
+
+
+// En services/products.js
+
+// ... (tus funciones existentes: createProduct, getProducts, getProductById) ...
+
+// 1. Función para ACTUALIZAR (PUT)
+export const updateProduct = async (id, product) => {
+  const res = await fetch(`${BASE_URL}/${id}`, {
+    method: "PUT", // PUT reemplaza todo el objeto
+    headers: { "Content-type": "application/json" },
+    body: JSON.stringify(product),
+  });
+
+  if (!res.ok) {
+    throw new Error("No se pudo actualizar el producto");
+  }
+
+  return await res.json();
+};
+
+// 2. Función para ELIMINAR (DELETE)
+export const deleteProduct = async (id) => {
+  const res = await fetch(`${BASE_URL}/${id}`, {
+    method: "DELETE",
+  });
+
+  if (!res.ok) {
+    throw new Error("No se pudo eliminar el producto");
+  }
+
+  return await res.json(); // Mockapi devuelve el objeto borrado
+};

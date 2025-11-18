@@ -1,0 +1,146 @@
+/* --- Contenedor Principal del Panel --- */
+.admin-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+  width: 100%;
+}
+
+/* Barra de acciones (donde está el botón de Agregar) */
+.actions-bar {
+  display: flex;
+  justify-content: flex-end; /* Alinea el botón a la derecha */
+  margin-bottom: 1rem;
+}
+
+/* --- Estilos de la Tabla --- */
+.table-responsive {
+  overflow-x: auto; /* Permite scroll horizontal en móviles */
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #1a1a1a; /* Fondo ligeramente más claro que el body */
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 1rem;
+  vertical-align: middle;
+}
+
+/* Cabecera de la tabla */
+.admin-table th {
+  background-color: #2a2a2a;
+  color: #646cff; /* Tu color de acento */
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+/* Filas */
+.admin-table tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s ease;
+}
+
+.admin-table tr:last-child {
+  border-bottom: none;
+}
+
+.admin-table tr:hover {
+  background-color: rgba(100, 108, 255, 0.1); /* Efecto hover sutil con tu color */
+}
+
+/* Imágenes en la tabla */
+.admin-table img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* --- Botones Específicos --- */
+
+/* Botón "Agregar Nuevo" (reutiliza tu clase .btn pero la destaca) */
+.btn-primary {
+  background-color: #646cff;
+  color: white;
+  text-decoration: none;
+  padding: 0.6em 1.2em;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background-color 0.25s;
+}
+
+.btn-primary:hover {
+  background-color: #535bf2;
+  border-color: transparent;
+}
+
+/* Botones de Acción (Editar / Eliminar) */
+.btn-edit,
+.btn-delete {
+  padding: 0.4em 0.8em;
+  margin-right: 0.5rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: opacity 0.2s;
+}
+
+.btn-edit {
+  background-color: #fab005; /* Amarillo/Naranja para editar */
+  color: #1a1a1a;
+}
+
+.btn-delete {
+  background-color: #fa5252; /* Rojo tomate para eliminar */
+  color: white;
+}
+
+.btn-edit:hover, .btn-delete:hover {
+  opacity: 0.9;
+}
+
+/* --- MODO CLARO (Light Mode Support) --- */
+@media (prefers-color-scheme: light) {
+  .table-responsive {
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .admin-table {
+    background-color: #ffffff;
+    color: #213547;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  .admin-table th {
+    background-color: #f1f1f1;
+    color: #535bf2;
+  }
+
+  .admin-table tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .admin-table tr:hover {
+    background-color: #f8f9fa;
+  }
+
+  .admin-table img {
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+}
